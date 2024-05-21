@@ -1,0 +1,36 @@
+<div class="task-heading">
+    <h1>Product Manager</h1>
+</div>
+<div class="create-task">
+    <button type="button" class="btn btn-success btn-lg" type="button" routerLink="/create" routerLinkActive="Active">
+        Create Product
+    </button>
+</div>
+
+<div class="todo-app">
+    <table class="todo-table">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productsFromService; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary" (click)="onUpdateClick(product.id)">Edit</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="onDeleteClick(product.id)">Delete</button>
+                    <button type="button" class="btn btn-outline-success" style="margin-left: 8px;" (click)="onViewClick(product.id)">View</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>

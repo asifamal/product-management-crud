@@ -1,0 +1,32 @@
+.radio-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .input-fields {
+    width: 80%;
+    margin-left: 130px;
+  }
+  
+  .input-fields .form-group {
+    margin-top: 60px;
+  }
+  
+  .input-fields .form-group h5 {
+    text-align: center;
+  }
+  
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    border: none;
+  }
+
+  small{
+    color: red;
+  }

@@ -1,0 +1,32 @@
+<form [formGroup]="productForm" (ngSubmit)="onUpdateProduct(productForm.value)">
+    <div class="input-fields">
+        <div class="form-group">
+            <h5>Product Name*</h5>
+            <input type="text" class="form-control" id="productName" formControlName="name">
+            <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">This is a required field*</small>
+
+        </div>
+        <div class="form-group">
+            <h5 class="label">Product Description*</h5>
+            <textarea class="form-control" id="productDescription" rows="3" formControlName="description"></textarea>
+            <small *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched">This is a required field*</small>
+
+        </div>
+    </div>
+
+    <div class="input-fields">
+        <div class="form-group">
+            <h5>Product Price*</h5>
+            <input type="number" class="form-control" id="productPrice" formControlName="price">
+            <small *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">This is a required field*</small>
+
+        </div>
+    </div>
+
+    <div class="btn">
+        <button type="submit" class="btn btn-success btn-lg">Add Product</button>
+        <button type="button" class="btn btn-info btn-lg" style="margin-left: 10px;" (click)="goHome()">Go Home</button>
+    </div>
+</form>
+
+<router-outlet></router-outlet>

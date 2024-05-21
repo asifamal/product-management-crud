@@ -1,0 +1,10 @@
+<div class="item-container" *ngIf="product">
+    <h2 class="item-name">{{product.name}}</h2>
+    <p class="item-description">{{product.description}}</p>
+    <h3 class="item-price">${{product.price}}</h3>
+  </div>
+
+
+  <div class="button-div">
+    <button type="button" class="btn btn-primary btn-lg" (click)="goHome()">Go Home</button>
+  </div>

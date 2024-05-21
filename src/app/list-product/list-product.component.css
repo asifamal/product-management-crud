@@ -1,0 +1,96 @@
+.todo-app {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.todo-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.todo-table th,
+.todo-table td {
+    border: none;
+    padding: 10px;
+    text-align: left;
+}
+
+.todo-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+
+.task-heading {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.task-heading h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #6DC5D1;
+}
+
+.bt {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+
+button:hover {
+    color: black;
+}
+
+button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.create-task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.dlt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+td .btn-outline-primary {
+    margin-right: 8px;
+}
