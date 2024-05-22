@@ -19,14 +19,14 @@ export class CreateProductComponent implements OnInit {
       name: ['', Validators.required],
       description: ['', Validators.required],
       price: ['', Validators.required],
-      image: [null,Validators.required]
     })
   }
 
 
-  onCreateProduct(data: {title:string, description:string, price: string}){
+  onCreateProduct(data: {name:string, description:string, price: string}){
     if(this.productForm.valid){
-      this.products.createProduct(data).subscribe((res) => {
+      let url = "http://127.0.0.1:8000/products/"
+      this.products.createProduct(url, data).subscribe((res) => {
         this.router.navigate(['home'])
       })
     }else{

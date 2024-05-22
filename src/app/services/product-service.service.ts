@@ -9,23 +9,22 @@ import { map } from 'rxjs';
 export class ProductService {
   currentProduct:any;
   currentProductID:any
-  url = "https://task-management-3ce9a-default-rtdb.asia-southeast1.firebasedatabase.app/products.json"
 
   constructor(private http: HttpClient) { }
 
 
-  createProduct(product: any) {
-    return this.http.post(this.url, product)
+  createProduct( url: string, product: any) {
+    return this.http.post("http://127.0.0.1:8000/products/", product)
   }
 
   getProduct() {
-    return this.http.get<{ [key: string]: Products }>(this.url)
+    return this.http.get<{ [key: string]: Products }>("http://127.0.0.1:8000/products/")
       .pipe(
         map(res => {
           let products = [];
           for (let key in res) {
             if (res.hasOwnProperty(key)) {
-              products.push({ ...res[key], id: key });
+              products.push({ ...res[key] });
             }
           }
           return products;
@@ -34,17 +33,17 @@ export class ProductService {
   }
 
   getProductbyId(id: number){
-    return this.http.get('https://task-management-3ce9a-default-rtdb.asia-southeast1.firebasedatabase.app/products/'+id+'.json')
+    return this.http.get(`http://127.0.0.1:8000/products/${id}/`)
   }
 
 
   updateProduct(id:string, product:Products){
-    return this.http.put('https://task-management-3ce9a-default-rtdb.asia-southeast1.firebasedatabase.app/products/'+id+'.json',product)
+    return this.http.put(`http://127.0.0.1:8000/products/${id}/`,product)
    }
 
 
    deleteProduct(id:string){  
-    return this.http.delete('https://task-management-3ce9a-default-rtdb.asia-southeast1.firebasedatabase.app/products/'+id+'.json')
+    return this.http.delete(`http://127.0.0.1:8000/products/${id}/`)
 
   }
 
